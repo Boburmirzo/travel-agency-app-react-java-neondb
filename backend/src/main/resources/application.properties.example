@@ -1,0 +1,29 @@
+# Example Spring Boot application properties for Neon/Postgres
+# This file mirrors the real `application.properties` structure but contains
+# placeholders instead of secrets. Copy to `application.properties` and fill
+# in the real values.
+
+# Server Configuration
+server.port=8080
+server.servlet.context-path=/
+
+# Database Configuration (Neon PostgreSQL)
+# Example JDBC URL format:
+# jdbc:postgresql://<neon-pool-host>/<db-name>?channel_binding=require&sslmode=require
+spring.datasource.url=jdbc:postgresql://[neon-pool-host]/[neondb]?channel_binding=require&sslmode=require
+spring.datasource.username=your_db_username
+spring.datasource.password=your_db_password
+spring.datasource.driver-class-name=org.postgresql.Driver
+
+# JPA Configuration
+spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.hibernate.ddl-auto=validate
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+
+# CORS Configuration
+cors.allowed-origins=http://localhost:3000
+
+# Logging
+logging.level.com.travelagency=DEBUG
+logging.level.org.springframework.web=DEBUG
