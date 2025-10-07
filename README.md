@@ -130,27 +130,3 @@ spring.datasource.url=jdbc:postgresql://[neon-host]/neondb
 spring.datasource.username=[username]
 spring.datasource.password=[password]
 ```
-
-## Changes Made
-
-1. **Project Restructuring**: 
-   - Created `frontend/` and `backend/` directories
-   - Moved React app files to `frontend/`
-   - Created Java Spring Boot project in `backend/`
-
-2. **Frontend Updates**:
-   - Updated API service to call local backend instead of GibsonAI
-   - Changed API endpoints to use RESTful conventions
-   - Added environment configuration for backend URL
-
-3. **Backend Implementation**:
-   - Created JPA entities matching the database schema
-   - Implemented Spring Data repositories
-   - Created REST controllers with full CRUD operations
-   - Added proper CORS configuration
-   - Connected to Neon PostgreSQL database
-
-4. **Database Integration**:
-   - Configured Spring Boot to connect to Neon database
-   - Used PostgreSQL-compatible syntax and data types
-   - Implemented proper foreign key relationships
