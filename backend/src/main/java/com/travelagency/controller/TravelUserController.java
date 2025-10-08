@@ -40,7 +40,7 @@ public class TravelUserController {
         if (userRepository.existsByEmail(request.getEmail())) {
             return ResponseEntity.status(HttpStatus.CONFLICT).build();
         }
-        
+
         // Create new user entity
         TravelUser user = new TravelUser();
         user.setUuid(UUID.randomUUID().toString());
@@ -48,7 +48,8 @@ public class TravelUserController {
         user.setLastName(request.getLastName());
         user.setEmail(request.getEmail());
         user.setPassword(request.getPassword());
-        
+        user.setAddress(request.getAddress()); // Set address field
+
         TravelUser savedUser = userRepository.save(user);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedUser);
     }
@@ -70,7 +71,10 @@ public class TravelUserController {
                     if (request.getPassword() != null && !request.getPassword().trim().isEmpty()) {
                         user.setPassword(request.getPassword());
                     }
-                    
+                    if (request.getAddress() != null) { // Update address field
+                        user.setAddress(request.getAddress());
+                    }
+
                     return ResponseEntity.ok(userRepository.save(user));
                 })
                 .orElse(ResponseEntity.notFound().build());
