@@ -23,14 +23,18 @@ public class CreateUserRequest {
     @Size(max = 255, message = "Password must be less than 255 characters")
     private String password;
     
+    @Size(max = 255, message = "Address must be less than 255 characters")
+    private String address;
+
     // Constructors
     public CreateUserRequest() {}
     
-    public CreateUserRequest(String firstName, String lastName, String email, String password) {
+    public CreateUserRequest(String firstName, String lastName, String email, String password, String address) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
+        this.address = address;
     }
     
     // Getters and Setters
@@ -45,4 +49,12 @@ public class CreateUserRequest {
     
     public String getPassword() { return password; }
     public void setPassword(String password) { this.password = password; }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 }

@@ -7,6 +7,7 @@ export interface TravelUser {
   email: string;
   dateCreated: string;
   dateUpdated?: string;
+  address?: string; // Optional field for user address
 }
 
 export interface TravelDestination {
@@ -61,6 +62,7 @@ export interface CreateUserForm {
   lastName: string;
   email: string;
   password: string;
+  address?: string; // Optional field for user address
 }
 
 export interface UpdateUserForm {
@@ -68,6 +70,7 @@ export interface UpdateUserForm {
   lastName?: string;
   email?: string;
   password?: string;
+  address?: string; // Optional field for user address
 }
 
 export interface CreateDestinationForm {
