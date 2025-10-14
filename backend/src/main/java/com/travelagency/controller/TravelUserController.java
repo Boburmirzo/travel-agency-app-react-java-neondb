@@ -70,6 +70,9 @@ public class TravelUserController {
                     if (request.getPassword() != null && !request.getPassword().trim().isEmpty()) {
                         user.setPassword(request.getPassword());
                     }
+                    if (request.getAddress() != null) {
+                        user.setAddress(request.getAddress());
+                    }
                     
                     return ResponseEntity.ok(userRepository.save(user));
                 })
