@@ -13,6 +13,7 @@ const UsersPage: React.FC = () => {
     lastName: '',
     email: '',
     password: '',
+    address: '',
   });
 
   useEffect(() => {
@@ -40,6 +41,7 @@ const UsersPage: React.FC = () => {
           firstName: formData.firstName,
           lastName: formData.lastName,
           email: formData.email,
+          address: formData.address,
         };
         await userApi.update(editingUser.id, updateData);
         toast.success('User updated successfully');
@@ -64,6 +66,7 @@ const UsersPage: React.FC = () => {
       lastName: user.lastName,
       email: user.email,
       password: '', // Don't populate password for security
+      address: user.address || '', // Populate address if available
     });
     setShowModal(true);
   };
@@ -87,6 +90,7 @@ const UsersPage: React.FC = () => {
       lastName: '',
       email: '',
       password: '',
+      address: '',
     });
   };
 
@@ -245,6 +249,17 @@ const UsersPage: React.FC = () => {
                     />
                   </div>
                 )}
+                <div className="mb-4">
+                  <label className="block text-gray-700 text-sm font-bold mb-2">
+                    Address
+                  </label>
+                  <input
+                    type="text"
+                    value={formData.address}
+                    onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  />
+                </div>
                 <div className="flex justify-end space-x-4">
                   <button
                     type="button"

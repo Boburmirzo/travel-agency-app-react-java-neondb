@@ -11,7 +11,7 @@ agent: agent
 
 5. Modify the backend application to support the new address field in the travel user table. Make sure to update the entity, dto, API, repository, and service layers accordingly.
 
-6. Modify the frontend application to include the address field in the user interface. Update forms, views, components and any relevant components to handle the new field.
+6. Modify the frontend application to include the address field in the user interface. Update forms, views, users table, components and any relevant components to handle the new field.
 
 7. Push the changes to the add-address-field Git branch.
 
