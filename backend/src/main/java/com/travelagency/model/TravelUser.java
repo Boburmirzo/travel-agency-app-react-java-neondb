@@ -41,6 +41,10 @@ public class TravelUser {
     @Column(name = "password", nullable = false, length = 255)
     private String password;
     
+    @Size(max = 255, message = "Address must be less than 255 characters")
+    @Column(name = "address", length = 255)
+    private String address;
+    
     @CreationTimestamp
     @Column(name = "date_created", nullable = false)
     private LocalDateTime dateCreated;
@@ -78,6 +82,9 @@ public class TravelUser {
     
     public String getPassword() { return password; }
     public void setPassword(String password) { this.password = password; }
+    
+    public String getAddress() { return address; }
+    public void setAddress(String address) { this.address = address; }
     
     public LocalDateTime getDateCreated() { return dateCreated; }
     public void setDateCreated(LocalDateTime dateCreated) { this.dateCreated = dateCreated; }
